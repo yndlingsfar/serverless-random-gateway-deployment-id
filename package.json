@@ -7,7 +7,7 @@
     "serverless-plugin",
     "AWS::ApiGateway::Deployment"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Serverless plugin for randomizing the AWS::ApiGateway::Deployment resource name ",
   "main": "lib/index.js",
   "scripts": {

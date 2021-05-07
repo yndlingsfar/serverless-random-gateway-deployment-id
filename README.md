@@ -95,5 +95,5 @@ resources:
         BasePath: some-path
         DomainName: www.test.de
         RestApiId: !Ref ApiGatewayRestApi
-        Stage: ${opt:stage, self:provider.stage}
+        Stage: !Ref ApiGatewayStage
 ```
