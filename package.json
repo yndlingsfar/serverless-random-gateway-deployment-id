@@ -1,0 +1,33 @@
+{
+  "name": "serverless-random-gateway-deployment-id",
+  "keywords": [
+    "serverless",
+    "aws",
+    "gateway",
+    "serverless-plugin",
+    "AWS::ApiGateway::Deployment"
+  ],
+  "version": "1.0.0",
+  "description": "Serverless plugin for randomizing the AWS::ApiGateway::Deployment resource name ",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test/unit"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "serverless": "2.x"
+  },
+  "engines": {
+    "node": ">=10.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yndlingsfar/serverless-random-gateway-deployment-id"
+  },
+  "bugs": {
+    "url": "https://github.com/yndlingsfar/serverless-random-gateway-deployment-id"
+  },
+  "homepage": "https://github.com/yndlingsfar/serverless-random-gateway-deployment-id#readme"
+}

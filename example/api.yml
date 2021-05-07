@@ -1,0 +1,100 @@
+openapi: 3.0.0
+info:
+  description: User Registration
+  version: 1.0.0
+  title: UserRegistrationDemo
+paths:
+  /api/v1/user:
+    post:
+      summary: adds a user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: user created
+          headers:
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              style: simple
+              explode: false
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              style: simple
+              explode: false
+              schema:
+                type: string
+      x-amazon-apigateway-integration:
+        httpMethod: POST
+        type: mock
+        passthroughBehavior: when_no_match
+        requestTemplates:
+          application/json: |
+            {
+              "statusCode" : 204
+            }
+        responses:
+          2\d{2}:
+            statusCode: '201'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key'''
+              method.response.header.Access-Control-Allow-Methods: '''*'''
+              method.response.header.Access-Control-Allow-Origin: '''*'''
+    options:
+      summary: Provide CORS
+      description: Basic CORS functionality with an aws mocking integration
+      responses:
+        '204':
+          description: No data
+          headers:
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              style: simple
+              explode: false
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              style: simple
+              explode: false
+              schema:
+                type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        requestTemplates:
+          application/json: |
+            {
+              "statusCode" : 204
+            }
+        responses:
+          default:
+            statusCode: '204'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key'''
+              method.response.header.Access-Control-Allow-Methods: '''*'''
+              method.response.header.Access-Control-Allow-Origin: '''*'''
+components:
+  schemas:
+    Customer:
+      type: object
+      required:
+        - email_address
+        - password
+      properties:
+        email_address:
+          type: string
+          example: test@example.com
+        password:
+          type: string
+          format: password
+          example: someStrongPassword#
