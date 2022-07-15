@@ -18,6 +18,9 @@ _Feedback is appreciated! If you have an idea for how this plugin/library can be
 1. [Installation & Setup](#installation--setup)
 1. [Example](#example)
 
+# Serverless
+ **Now supports Serverless 3.x**
+
 # Overview
 When using serverless framework only to deploy your aws resources **without having any lambda functions or triggers**, the AWS Gateway deploymemt does not behave as expected.
 Any deployment to an existing stage will be ignored, since CloudFormation does not redeploy a stage if the DeploymentIdentifier has not changed.
